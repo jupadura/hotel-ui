@@ -12,6 +12,8 @@ const StarsComponent = ({
         <IconsComponent
           className={styles.star}
           icon="star"
+          heigth={size}
+          width={size}
         />
       )
     }

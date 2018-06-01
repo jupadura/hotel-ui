@@ -1,5 +1,7 @@
+@import '../../styles/mixins';
+
 .stars_container {
-    display: block;
+    @include flex(horizontal, center);
 }
 
 .star {
