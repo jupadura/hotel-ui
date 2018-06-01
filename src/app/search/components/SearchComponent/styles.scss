@@ -1,0 +1,28 @@
+@import "../../../common/styles/variables.scss";
+@import "../../../common/styles/mixins.scss";
+
+.search {
+    background-color: white;
+    -webkit-box-shadow: 0 1px 4px rgba(37, 59, 85, 0.35);
+    -moz-box-shadow: 0 1px 4px rgba(37, 59, 85, 0.35);
+    box-shadow: 0 1px 4px rgba(37, 59, 85, 0.35);   
+    width: 280px;
+    margin: 20px 15px;
+    
+    .section {
+        padding: 10px;
+        border-bottom: 4px solid $background-color;
+
+        .title {
+            @include flex(horizontal, baseline);    
+            color: $primary-color;
+            margin: 0px;
+        }
+
+        .icon {
+            fill: $primary-color;
+            margin-right: 5px;    
+        }
+    }
+
+}
