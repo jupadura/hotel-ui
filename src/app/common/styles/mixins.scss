@@ -1,0 +1,15 @@
+@mixin flex($direction, $align: stretch, $justify: flex-start ) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex; 
+
+    -webkit-flex-direction: $direction;
+       -moz-flex-direction: $direction;
+        -ms-flex-direction: $direction;	
+            flex-direction: $direction;
+
+    align-items: $align;
+    justify-content: $justify;
+}
