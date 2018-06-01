@@ -1,28 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import styles from './styles.scss';
 
-class CheckboxComponent extends Component {
-    state = {
-        checked: this.props.checked || false,
-    };
-
-    toggleChecked = () => {
-        this.setState(({ checked }) => ({
-            checked: !checked
-        }));
-    }
-
-    render() {
-        return <div className={`${styles.checkbox_container} ${this.props.className}`}>
-            <div
-                onClick={this.toggleChecked}
-                className={`${styles.checkbox} ${this.state.checked ? styles.selected : ''} `}
-                tabIndex="0">
-            </div>
-            {this.props.children}        
+const CheckboxComponent = ({
+    value, 
+    checked,
+    onChange,
+    className,
+    children
+}) => (
+    <div className={`${styles.checkbox_container} ${className}`}>
+        <div
+            className={`${styles.checkbox} ${checked ? styles.selected : ''} `}
+            onClick={() => onChange({ value, checked: !checked })}
+            tabIndex="0">
         </div>
-    }
-};
+        {children}        
+    </div>
+);
 
 export default CheckboxComponent;
