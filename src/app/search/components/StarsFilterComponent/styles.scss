@@ -1,0 +1,16 @@
+@import '../../../common/styles/variables';
+
+.line {
+    margin-bottom: 5px;
+
+    .select_all {
+        color: $message-gray;
+        font-weight: bold;
+        font-size: 13px;
+        margin-left: 5px;
+    }
+
+    .star {
+        margin-left: 5px;
+    }
+}
