@@ -1,0 +1,34 @@
+@import '../../../common/styles/mixins';
+@import '../../../common/styles/variables';
+
+.header {
+    @include flex(horizontal, center, space-between);
+    cursor: pointer;
+
+    .arrow {
+        border-top: none;
+        border-left: 7px solid transparent;
+        border-right:  7px solid transparent;
+        border-bottom:  10px solid $primary-color;
+    }
+}
+
+
+.content {
+    margin-top: 10px;
+}
+
+.collapsed {
+    .content {
+        margin-top: 0px;
+        overflow: hidden;
+        height: 0px;
+    }
+
+    .arrow {
+        border-bottom: none;
+        border-left: 7px solid transparent;
+        border-right:  7px solid transparent;
+        border-top:  10px solid $primary-color;
+    }
+}
