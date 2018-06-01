@@ -21,25 +21,25 @@ import Star from './icons/star.svg';
 import Search from './icons/search.svg';
 
 const icons = {
-    'bathrobes': Bathrobes,
-    'bathtub': Bathtub,
-    'beach': Beach,
-    'beach-pool-facilities': BeachPoolFacilities,
-    'business-center': BusinessCenter,
-    'children-club': ChildrenClub,
-    'coffe-maker': CoffeMaker,
-    'deep-soaking-bathtub': DeepSoakingBathtub,
-    'fitness-center': FitnessCenter,
-    'garden': Garden,
-    'kitchen-facilities': KitchenFacilities,
-    'newspaper': Newspaper,
-    'nightclub': Nightclub,
-    'restaurant': Restaurant,
-    'safety-box': SafetyBox,
-    'separate-bredroom': SeparateBredroom,
-    'sheets': Sheets,
-    'star': Star,
-    'search': Search
+  'bathrobes': Bathrobes,
+  'bathtub': Bathtub,
+  'beach': Beach,
+  'beach-pool-facilities': BeachPoolFacilities,
+  'business-center': BusinessCenter,
+  'children-club': ChildrenClub,
+  'coffe-maker': CoffeMaker,
+  'deep-soaking-bathtub': DeepSoakingBathtub,
+  'fitness-center': FitnessCenter,
+  'garden': Garden,
+  'kitchen-facilities': KitchenFacilities,
+  'newspaper': Newspaper,
+  'nightclub': Nightclub,
+  'restaurant': Restaurant,
+  'safety-box': SafetyBox,
+  'separate-bredroom': SeparateBredroom,
+  'sheets': Sheets,
+  'star': Star,
+  'search': Search
 };
 
 const IconsComponent = ({
@@ -48,12 +48,12 @@ const IconsComponent = ({
   height = '20px',
   width = '20px'
 }) => {
-    const Icon = icons[icon];
-    return <Icon 
-        className={className}
-        height={height} 
-        width={width} 
-    />
+  const Icon = icons[icon];
+  return <Icon
+    className={className}
+    height={height} 
+    width={width} 
+  />
 };
 
 export default IconsComponent;

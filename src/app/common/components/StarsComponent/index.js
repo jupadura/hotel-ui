@@ -3,6 +3,7 @@ import IconsComponent from '../IconsComponent';
 import styles from './styles.scss';
 
 const StarsComponent = ({
+  className,
   length,
   size = '20px'
 }) => (
@@ -10,7 +11,7 @@ const StarsComponent = ({
     {
       Array(length).fill(
         <IconsComponent
-          className={styles.star}
+          className={`${styles.star} ${className}`}
           icon="star"
           heigth={size}
           width={size}
