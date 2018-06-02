@@ -1,0 +1,11 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.header {
+    @include flex(horizontal, center);
+    box-sizing: border-box;
+    background-color: $primary-color;
+    height: 64px;
+    width: 100%;    
+    padding: 10px;
+}
