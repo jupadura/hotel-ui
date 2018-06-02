@@ -1,0 +1,14 @@
+@import '../../styles/index';
+
+.primary {
+    background: $primary-color;
+    border-bottom: 2px solid #001847;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    padding: 5px 10px;
+    text-align: center;
+}

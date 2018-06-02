@@ -1,5 +1,4 @@
-@import '../../../common/styles/mixins';
-@import '../../../common/styles/variables';
+@import '../../../common/styles/index';
 
 .header {
     @include flex(row, center, space-between);
@@ -13,14 +12,12 @@
     }
 }
 
-
-.content {
-    margin-top: 10px;
+.center {
+    justify-content: center;
 }
 
 .collapsed {
     .content {
-        margin-top: 0px;
         overflow: hidden;
         height: 0px;
     }

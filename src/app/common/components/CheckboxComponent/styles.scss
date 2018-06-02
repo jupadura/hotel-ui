@@ -1,5 +1,4 @@
-@import '../../../common/styles/mixins';
-@import '../../../common/styles/variables';
+@import '../../../common/styles/index';
 
 .checkbox_container {
     @include flex(row, center);

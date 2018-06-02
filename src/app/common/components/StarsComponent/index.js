@@ -1,5 +1,7 @@
 import React from 'react';
+
 import IconsComponent from '../IconsComponent';
+
 import styles from './styles.scss';
 
 const StarsComponent = ({
