@@ -2,7 +2,7 @@
 @import '../../../common/styles/variables';
 
 .header {
-    @include flex(horizontal, center, space-between);
+    @include flex(row, center, space-between);
     cursor: pointer;
 
     .arrow {

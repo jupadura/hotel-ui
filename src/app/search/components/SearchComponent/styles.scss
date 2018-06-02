@@ -14,13 +14,13 @@
         border-bottom: 4px solid $background-color;
 
         .title {
-            @include flex(horizontal, baseline);    
-            color: $primary-color;
+            @include flex(row, baseline);    
+            color: $secondary-color;
             margin: 0px;
         }
 
         .icon {
-            fill: $primary-color;
+            fill: $secondary-color;
             margin-right: 5px;    
         }
     }

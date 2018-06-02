@@ -1,15 +1,21 @@
-@mixin flex($direction, $align: stretch, $justify: flex-start ) {
+@mixin direction($direction) {
+    -webkit-flex-direction: $direction;
+       -moz-flex-direction: $direction;
+        -ms-flex-direction: $direction;	
+            flex-direction: $direction;
+}
+
+@mixin display-flex() {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex; 
+}
 
-    -webkit-flex-direction: $direction;
-       -moz-flex-direction: $direction;
-        -ms-flex-direction: $direction;	
-            flex-direction: $direction;
-
+@mixin flex($direction, $align: stretch, $justify: flex-start ) {
+    @include display-flex();
+    @include direction($direction);
     align-items: $align;
     justify-content: $justify;
 }

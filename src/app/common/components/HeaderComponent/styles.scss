@@ -2,7 +2,7 @@
 @import '../../styles/variables';
 
 .header {
-    @include flex(horizontal, center);
+    @include flex(row, center);
     box-sizing: border-box;
     background-color: $primary-color;
     height: 64px;
