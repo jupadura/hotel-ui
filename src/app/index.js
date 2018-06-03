@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
-  Redirect
+  Switch
 } from 'react-router-dom';
 
 import SearchContainer from './search/containers/SearchContainer';
-import styles from "./styles.scss";
 
 const App = () => (
   <Router>
