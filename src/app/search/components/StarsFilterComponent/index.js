@@ -1,20 +1,39 @@
 import React from 'react';
 
-import CheckboxComponent from '../../../common/components/CheckboxComponent'
-import StarsComponent from '../../../common/components/StarsComponent'
+import {
+    CollapsableComponent,
+    CheckboxComponent,
+    StarsComponent,  
+    IconsComponent
+} from '../../../common/components';
 
 import styles from './styles.scss';
 
 const StarsFilterComponent = ({
     onToggleStar,
     onSelectAll,    
-    starsSelected
+    starsSelected,
+    className
 }) => (
-    <div>
+    <CollapsableComponent
+        className={className}
+        header={
+            <h5 className={styles.title}>
+                <IconsComponent 
+                    className={styles.icon}
+                    icon="star" 
+                    width="16px" 
+                    height="16px"
+                />
+                Estrellas        
+            </h5>
+        }
+    >
         <CheckboxComponent
-            className={styles.line}
+            className={`${styles.line}`}
             checked={starsSelected.size === 5}
-            onChange={onSelectAll}>
+            onChange={onSelectAll}
+        >
             <span className={styles.select_all}>
                 Todas las estrellas
             </span>
@@ -25,17 +44,18 @@ const StarsFilterComponent = ({
                     key={value}
                     className={styles.line}
                     checked={starsSelected.has(value)}
-                    onChange={() => onToggleStar(value)}>
+                    onChange={() => onToggleStar(value)}
+                >
                     <StarsComponent
                         className={styles.star}
                         key={value}
                         length={value}
-                        size="15px"
+                        size="14px"
                     /> 
                 </CheckboxComponent>
             )   
         }
-    </div>
+  </CollapsableComponent>
 );
 
 export default StarsFilterComponent;

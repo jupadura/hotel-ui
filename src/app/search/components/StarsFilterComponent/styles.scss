@@ -1,7 +1,12 @@
-@import '../../../common/styles/variables';
+@import '../../../common/styles/index';
+
+.icon {
+    fill: $secondary-color;
+    margin-right: 5px;    
+}
 
 .line {
-    margin-bottom: 5px;
+    margin-top: 10px;
 
     .select_all {
         color: $message-gray;
@@ -13,4 +18,11 @@
     .star {
         margin-left: 5px;
     }
+}
+
+
+.title {
+    @include flex(row, baseline);    
+    color: $secondary-color;
+    margin: 0px;
 }
