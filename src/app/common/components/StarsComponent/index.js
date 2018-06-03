@@ -11,7 +11,7 @@ const StarsComponent = ({
 }) => (
   <div className={styles.stars_container}>
     {
-      Array(length).fill('').map((value, index) =>
+      Array(length).join().split(',').map((value, index) =>
         <IconsComponent
           key={index}
           className={`${styles.star} ${className}`}
