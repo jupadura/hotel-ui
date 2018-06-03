@@ -1,5 +1,10 @@
 @import '../src/app/common/styles/variables';
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background-color: $background-color;
   margin: 0;
