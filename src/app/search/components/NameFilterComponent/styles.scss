@@ -1,0 +1,22 @@
+@import '../../../common/styles/index';
+
+.icon {
+    fill: $secondary-color;
+    margin-right: 5px;    
+}
+
+.title {
+    @include flex(row, baseline);    
+    color: $secondary-color;
+    margin: 0px;
+}
+
+.input_container {
+    @include flex(row);
+    margin-top: 15px;
+}
+
+.input {
+    width: 100%;
+    margin-right: 5px;
+}
