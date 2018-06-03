@@ -1,18 +1,20 @@
-@import "../../../common/styles/variables.scss";
-@import "../../../common/styles/mixins.scss";
+@import "../../../common/styles/index";
 
 .search {
+    @include shadow(0 1px 4px rgba(37, 59, 85, 0.35));
     background-color: white;
-    -webkit-box-shadow: 0 1px 4px rgba(37, 59, 85, 0.35);
-    -moz-box-shadow: 0 1px 4px rgba(37, 59, 85, 0.35);
-    box-shadow: 0 1px 4px rgba(37, 59, 85, 0.35);   
-    width: 280px;
-    margin: 20px 15px;
+    margin: 20px 0px;
     
     .section {
         padding: 10px;
         border-bottom: 4px solid $background-color;
 
+        .header {
+            color: $message-gray;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
         .title {
             @include flex(row, baseline);    
             color: $secondary-color;
@@ -25,4 +27,22 @@
         }
     }
 
+}
+
+.column-xs {
+    padding: 0px !important;
+
+    .search {
+        margin: 0px 0px 4px;
+    }
+
+    .header {
+        background-color: white;
+    }
+    
+    .title_header {
+        color: $secondary-color;
+        padding: 10px 5px 10px 0px;
+        margin: 0px;
+    }
 }

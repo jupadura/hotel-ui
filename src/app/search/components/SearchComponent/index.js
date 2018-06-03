@@ -1,64 +1,82 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { 
+  Col,
+  Hidden,
+  ScreenClassRender,
+  Visible
+} from 'react-grid-system';
+
+import CollapsableComponent from '../../../common/components/CollapsableComponent';
+
+import StarsFilterComponent from '../StarsFilterComponent';
+import NameFilterComponent from '../NameFilterComponent';
 
 import styles from './styles.scss';
 
-import IconsComponent from '../../../common/components/IconsComponent'
-import CollapsableComponent from '../../../common/components/CollapsableComponent'
-import StarsFilterComponent from '../StarsFilterComponent'
+class SearchComponent extends Component { 
+  getForm() {
+    const {
+      onToggleStar,
+      onChangeHotelsName,
+      onSearchHotels,
+      onSelectAll,
+      stars,
+      hotelsName
+    } = this.props;
 
-const SearchComponent = ({ 
-  onToggleStar,
-  onChangeHotelsName,
-  onSearchHotels,
-  onSelectAll,
-  stars,
-  hotelsName
-}) => (
-  <form className={styles.search}>
-    <section className={styles.section}>
-      <h5 className={styles.title}>
-        Filtros
-      </h5>
-    </section>
-    <CollapsableComponent
-      className={styles.section}
-      header={
-        <h5 className={styles.title}>
-          <IconsComponent 
-            className={styles.icon}
-            icon="search" 
-            width="16px" 
-            height="16px"/>
-          Nombre del hotel            
-        </h5>
-    }>
-      <input 
-        type="text"
-        placeholder="Ingrese el nombre del hotel" 
-        value={hotelsName}
-        onChange={({ target: { value }}) => onChangeHotelsName(value)}/>
-        <input type="button" value="Aceptar" onClick={() => onSearchHotels(hotelsName, stars)}/>
-    </CollapsableComponent>
-    <CollapsableComponent
-      className={styles.section}
-      header={
-      <h5 className={styles.title}>
-        <IconsComponent 
-          className={styles.icon}
-          icon="star" 
-          width="16px" 
-          height="16px"/>
-          Estrellas        
-        </h5>
-      }
-    >
+    return <form className={styles.search}>
+      <Hidden xs>
+        <section className={styles.section}>
+          <span className={styles.header}>
+            Filtros
+          </span>
+        </section>
+      </Hidden>
+      <NameFilterComponent 
+        hotelsName={hotelsName}
+        onChangeHotelsName={onChangeHotelsName}
+        onSearchHotels={onSearchHotels}
+        stars={stars}
+        className={styles.section}
+      />
       <StarsFilterComponent
         onToggleStar={onToggleStar}
         onSelectAll={onSelectAll}
         starsSelected={stars}
+        className={styles.section}
       />
-    </CollapsableComponent>
-  </form>
-);
+    </form>
+  }
+
+  render() {
+    return <ScreenClassRender render={screenClass => (
+      <Col 
+        className={styles[`column-${screenClass}`]}
+        sm={5} 
+        md={4} 
+        lg={3} 
+      >
+        <Hidden xs>
+          {this.getForm()}
+        </Hidden>
+        <Visible xs>
+          <CollapsableComponent
+            collapsed={true}
+            className={styles.header}
+            align="center"
+            header={
+              <h5 className={styles.title_header}>
+                Filtrar
+              </h5>
+            }
+          >
+            {this.getForm()}   
+          </CollapsableComponent>
+        </Visible>
+      </Col>
+    )}>    
+    </ScreenClassRender>;
+  }
+};
 
 export default SearchComponent;
