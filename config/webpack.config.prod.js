@@ -204,6 +204,7 @@ module.exports = {
                   loader: 'css-loader',
                   options: {
                     modules: true,
+                    minimize: true,
                     sourceMap: true,
                     importLoaders: 2,
                     localIdentName: '[name]__[local]__[hash:base64:5]'
@@ -235,7 +236,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new ExtractTextPlugin({ filename: 'style.css', allChunks: true }),
+    //new ExtractTextPlugin({ filename: 'style.css', allChunks: true }),
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
