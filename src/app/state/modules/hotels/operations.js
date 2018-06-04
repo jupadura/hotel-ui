@@ -10,7 +10,7 @@ const searchHotels = (name, stars, star, allStars) => dispatch => {
         newStars = star ? stars[method](star) : stars;
     }
 
-    return fetch(`http://localhost:3001/api/hotels?name=${name}&stars=${newStars.join(',')}`)
+    return fetch(`${process.env.REACT_APP_API}/hotels?name=${name}&stars=${newStars.join(',')}`)
         .then(
             response => response.json(),
         )
